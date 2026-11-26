@@ -225,4 +225,7 @@ __marimo__/
 # Test FASTQ files
 *.fastq.gz
 data/
+
+# Nextflow work dir and logs
 work/
+.nextflow.log*
