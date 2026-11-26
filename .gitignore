@@ -230,3 +230,6 @@ data
 work
 .nextflow.log*
 .nextflow
+
+# Nf-test logs
+.nf-test*

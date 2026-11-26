@@ -1,0 +1,39 @@
+nextflow_process {
+
+    name "Test Process BWAMEM"
+    script "modules/local/bwamem/main.nf"
+    process "BWAMEM"
+
+    test("Should run without failures") {
+
+        when {
+            process {
+                """
+                input[0] = [
+                    [id: "test", name: "test", project: "test"],
+                    [
+                        file("\${params.fastq_dir}/TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz"),
+                        file("\${params.fastq_dir}/TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz")
+                    ]
+                ]
+                input[1] = file("\${params.reference_genome}")
+                input[2] = [
+                    file("\${params.reference_genome}.fai"),
+                    file("\${params.reference_genome}.bwt.2bit.64"),
+                    file("\${params.reference_genome}.amb"),
+                    file("\${params.reference_genome}.ann"),
+                    file("\${params.reference_genome}.pac"),
+                    file("\${params.reference_genome}.0123")
+                ]
+                """
+            }
+        }
+
+        then {
+            assert process.success
+            assert snapshot(process.out).match()
+        }
+
+    }
+
+}

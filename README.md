@@ -4,7 +4,7 @@ Simple NextFlow Pipeline
 AI was used to help build this pipeline: https://cloud.seqera.io/
 
 ## How to run
-Get test data from https://github.com/hartwigmedical/testdata and put it in a data folder after cloning this repo.
+Get test data from https://github.com/hartwigmedical/testdata and put it in a sub-folder called "data" after cloning this repo.
 
 ```
 nextflow run main.nf --samplesheet samplesheet.csv
