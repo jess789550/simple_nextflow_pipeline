@@ -1,0 +1,15 @@
+Unable to find image 'pegi3s/bwa:latest' locally
+latest: Pulling from pegi3s/bwa
+50e06062d221: Pulling fs layer
+ca2678b20700: Pulling fs layer
+6536453b380e: Pulling fs layer
+ca2678b20700: Download complete
+ca2678b20700: Pull complete
+50e06062d221: Download complete
+6536453b380e: Download complete
+6536453b380e: Pull complete
+50e06062d221: Pull complete
+Digest: sha256:ea4299156c0279c8c2b8caa0660ea4ddeef7563aff43f96daaf7b302d9166333
+Status: Downloaded newer image for pegi3s/bwa:latest
+/data/dev/jess/simple_nextflow_pipeline/work/c9/afe184c3f07242cded6b71a8499dbb/.command.sh: line 4: samtools: command not found
+[E::bwa_idx_load_from_disk] fail to locate the index files

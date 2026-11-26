@@ -1,0 +1,13 @@
+DBI connect('host=ensembldb.ensembl.org;port=3306','anonymous',...) failed: Can't connect to MySQL server on 'ensembldb.ensembl.org:3306' (110) at /opt/vep/src/ensembl-vep/Bio/EnsEMBL/Registry.pm line 1761.
+
+-------------------- EXCEPTION --------------------
+MSG: Cannot connect to the Ensembl MySQL server at ensembldb.ensembl.org:3306; check your settings & DBI error message: Can't connect to MySQL server on 'ensembldb.ensembl.org:3306' (110)
+STACK Bio::EnsEMBL::Registry::load_registry_from_db /opt/vep/src/ensembl-vep/Bio/EnsEMBL/Registry.pm:1761
+STACK Bio::EnsEMBL::VEP::BaseVEP::registry /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/BaseVEP.pm:292
+STACK Bio::EnsEMBL::VEP::BaseRunner::setup_db_connection /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/BaseRunner.pm:125
+STACK Bio::EnsEMBL::VEP::Runner::init /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/Runner.pm:123
+STACK Bio::EnsEMBL::VEP::Runner::run /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/Runner.pm:200
+STACK toplevel /opt/vep/src/ensembl-vep/vep:46
+Date (localtime)    = Wed Nov 25 16:22:28 2026
+Ensembl API version = 115
+---------------------------------------------------

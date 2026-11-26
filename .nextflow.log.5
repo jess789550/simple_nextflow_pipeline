@@ -1,0 +1,127 @@
+Nov-25 16:54:10.326 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --samplesheet samplesheet.csv -resume
+Nov-25 16:54:10.438 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.10.7
+Nov-25 16:54:10.459 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jessk/.nextflow/plugins; core-plugins: nf-agent-pi@0.6.0,nf-agent@0.2.0,nf-amazon@3.12.1,nf-azure@1.24.5,nf-cloudcache@0.6.2,nf-codecommit@0.6.1,nf-console@1.3.1,nf-google@1.29.1,nf-k8s@1.6.2,nf-seqera@0.26.3,nf-tower@1.32.2,nf-wave@1.22.7
+Nov-25 16:54:10.489 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-25 16:54:10.490 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-25 16:54:10.493 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Nov-25 16:54:10.511 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Nov-25 16:54:10.679 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Nov-25 16:54:10.690 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-25 16:54:10.715 [main] DEBUG nextflow.config.ConfigCmdAdapter - Found config local: /data/dev/jess/simple_nextflow_pipeline/nextflow.config
+Nov-25 16:54:10.717 [main] DEBUG nextflow.config.ConfigCmdAdapter - Parsing config file: /data/dev/jess/simple_nextflow_pipeline/nextflow.config
+Nov-25 16:54:10.719 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Nov-25 16:54:10.729 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-25 16:54:11.097 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-25 16:54:11.097 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Nov-25 16:54:11.113 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/jessk/.nextflow/secrets/store.json
+Nov-25 16:54:11.116 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [LocalSecretsProvider] - activable => LocalSecretsProvider
+Nov-25 16:54:11.128 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [maniac_ekeblad] - revision: 01fc4161f1
+Nov-25 16:54:11.221 [main] DEBUG nextflow.Session - Session UUID: 66e11da1-2dec-49d3-9e15-a25419400466
+Nov-25 16:54:11.221 [main] DEBUG nextflow.Session - Run name: maniac_ekeblad
+Nov-25 16:54:11.221 [main] DEBUG nextflow.Session - Executor pool size: 96
+Nov-25 16:54:11.229 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Nov-25 16:54:11.234 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=288; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-25 16:54:11.254 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.10.7 build 15252
+  Created: 20-11-2026 17:50 UTC 
+  System: Linux 6.8.0-90-generic
+  Runtime: Groovy 4.0.33 on OpenJDK 64-Bit Server VM 21.0.6+9-b895.97
+  Encoding: UTF-8 (UTF-8)
+  Process: 3905059@nbsvr961 [127.0.1.1]
+  CPUs: 96 - Mem: 503.4 GB (199.7 GB) - Swap: 8 GB (7.8 GB)
+Nov-25 16:54:11.272 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-25 16:54:11.280 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 97; maxThreads: 1000
+Nov-25 16:54:11.353 [main] DEBUG nextflow.Session - Work-dir: /data/dev/jess/simple_nextflow_pipeline/work [ext2/ext3]
+Nov-25 16:54:11.353 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /data/dev/jess/simple_nextflow_pipeline/bin
+Nov-25 16:54:11.367 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[K8sExecutor]
+Nov-25 16:54:11.376 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Nov-25 16:54:11.378 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Nov-25 16:54:11.408 [main] DEBUG nextflow.Session - Session start
+Nov-25 16:54:11.413 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Nov-25 16:54:11.877 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-25 16:54:12.094 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:54:12.094 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:54:12.098 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Nov-25 16:54:12.105 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=96; memory=503.4 GB; capacity=96; pollInterval=100ms; dumpInterval=5m
+Nov-25 16:54:12.111 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Nov-25 16:54:12.137 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWAMEM': maxForks=0; fair=false; array=0
+Nov-25 16:54:12.160 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:54:12.160 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:54:12.161 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_SORT': maxForks=0; fair=false; array=0
+Nov-25 16:54:12.164 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:54:12.164 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:54:12.164 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_INDEX': maxForks=0; fair=false; array=0
+Nov-25 16:54:12.167 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:54:12.167 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:54:12.168 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'GATK_HAPLOTYPECALLER': maxForks=0; fair=false; array=0
+Nov-25 16:54:12.172 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:54:12.172 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:54:12.173 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VEP': maxForks=0; fair=false; array=0
+Nov-25 16:54:12.176 [main] DEBUG nextflow.Session - Process names: SAMTOOLS_SORT, VEP, BWAMEM, GATK_HAPLOTYPECALLER, SAMTOOLS_INDEX
+Nov-25 16:54:12.177 [main] DEBUG nextflow.Session - Igniting dataflow network (7)
+Nov-25 16:54:12.182 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWAMEM
+Nov-25 16:54:12.183 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_SORT
+Nov-25 16:54:12.183 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: data/; pattern: *_R{1,2}_001.fastq.gz; options: [:]
+Nov-25 16:54:12.183 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_INDEX
+Nov-25 16:54:12.184 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GATK_HAPLOTYPECALLER
+Nov-25 16:54:12.184 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VEP
+Nov-25 16:54:12.185 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  _nf_script_c6d07154f4c042cb: /data/dev/jess/simple_nextflow_pipeline/modules/local/bwamem/main.nf
+  _nf_script_3f3e8b48b39d35e7: /data/dev/jess/simple_nextflow_pipeline/modules/local/vep/main.nf
+  Main: /data/dev/jess/simple_nextflow_pipeline/main.nf
+  _nf_script_dd49926eff707056: /data/dev/jess/simple_nextflow_pipeline/modules/local/gatk_haplotypecaller/main.nf
+  _nf_script_14a5cf0fd6b59003: /data/dev/jess/simple_nextflow_pipeline/modules/local/samtools/sort/main.nf
+  _nf_script_59de6b3db482d82d: /data/dev/jess/simple_nextflow_pipeline/modules/local/samtools/index/main.nf
+Nov-25 16:54:12.185 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Nov-25 16:54:12.185 [main] DEBUG nextflow.Session - Session await
+Nov-25 16:54:12.364 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [8c/b7f65f] Cached process > BWAMEM (3)
+Nov-25 16:54:12.364 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [14/8b5e5d] Cached process > BWAMEM (2)
+Nov-25 16:54:12.364 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [10/b903e1] Cached process > BWAMEM (1)
+Nov-25 16:54:12.386 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [d0/293140] Cached process > SAMTOOLS_SORT (3)
+Nov-25 16:54:12.386 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [11/7a60e4] Cached process > SAMTOOLS_SORT (1)
+Nov-25 16:54:12.386 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [d8/71ec23] Cached process > SAMTOOLS_SORT (2)
+Nov-25 16:54:12.398 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [ce/e67fd3] Cached process > SAMTOOLS_INDEX (3)
+Nov-25 16:54:12.398 [Actor Thread 48] INFO  nextflow.processor.TaskProcessor - [86/1540dd] Cached process > SAMTOOLS_INDEX (1)
+Nov-25 16:54:12.399 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [0a/fbaec5] Cached process > SAMTOOLS_INDEX (2)
+Nov-25 16:54:12.548 [Actor Thread 59] INFO  nextflow.processor.TaskProcessor - [4a/026115] Cached process > GATK_HAPLOTYPECALLER (1)
+Nov-25 16:54:12.548 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [00/641015] Cached process > GATK_HAPLOTYPECALLER (2)
+Nov-25 16:54:12.548 [Actor Thread 61] INFO  nextflow.processor.TaskProcessor - [87/c5c4ac] Cached process > GATK_HAPLOTYPECALLER (3)
+Nov-25 16:54:12.560 [Actor Thread 68] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VEP (1); work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Not a valid path value type: java.util.LinkedHashMap ([id:1, name:TESTX_H7YRLADXX, project:100k_reads_hiseq])
+Nov-25 16:54:12.570 [Actor Thread 68] ERROR nextflow.processor.TaskProcessor - Error executing process > 'VEP (1)'
+
+Caused by:
+  Not a valid path value type: java.util.LinkedHashMap ([id:1, name:TESTX_H7YRLADXX, project:100k_reads_hiseq])
+
+
+
+Container:
+  ensemblorg/ensembl-vep
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Nov-25 16:54:12.572 [Actor Thread 68] DEBUG nextflow.Session - Session aborted -- Cause: Not a valid path value type: java.util.LinkedHashMap ([id:1, name:TESTX_H7YRLADXX, project:100k_reads_hiseq])
+Nov-25 16:54:12.585 [Actor Thread 68] DEBUG nextflow.Session - The following nodes are still active:
+[process] VEP
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (value) bound ; channel: vep_cache_dir
+  port 2: (value) bound ; channel: vep_plugins_dir
+  port 3: (queue) OPEN  ; channel: bai
+  port 4: (cntrl) -     ; channel: $
+
+Nov-25 16:54:12.593 [Actor Thread 68] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=12; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=4h 59m 38s;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Nov-25 16:54:12.619 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Nov-25 16:54:12.787 [main] DEBUG nextflow.Session - Session await > all processes finished
+Nov-25 16:54:12.788 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-25 16:54:12.788 [Actor Thread 69] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VEP (2); work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Not a valid path value type: java.util.LinkedHashMap ([id:3, name:TESTZ_H7YRLADXX, project:100k_reads_hiseq])
+Nov-25 16:54:12.792 [Actor Thread 71] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VEP; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+Nov-25 16:54:12.793 [Actor Thread 73] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VEP (3); work-dir=null
+  error [nextflow.exception.ProcessUnrecoverableException]: Not a valid path value type: java.util.LinkedHashMap ([id:2, name:TESTY_H7YRLADXX, project:100k_reads_hiseq])
+Nov-25 16:54:12.802 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-25 16:54:12.814 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

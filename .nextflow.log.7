@@ -1,0 +1,162 @@
+Nov-25 16:33:18.019 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --samplesheet samplesheet.csv -resume
+Nov-25 16:33:18.101 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.10.7
+Nov-25 16:33:18.118 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jessk/.nextflow/plugins; core-plugins: nf-agent-pi@0.6.0,nf-agent@0.2.0,nf-amazon@3.12.1,nf-azure@1.24.5,nf-cloudcache@0.6.2,nf-codecommit@0.6.1,nf-console@1.3.1,nf-google@1.29.1,nf-k8s@1.6.2,nf-seqera@0.26.3,nf-tower@1.32.2,nf-wave@1.22.7
+Nov-25 16:33:18.144 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-25 16:33:18.145 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-25 16:33:18.147 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Nov-25 16:33:18.161 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Nov-25 16:33:18.286 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Nov-25 16:33:18.291 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-25 16:33:18.309 [main] DEBUG nextflow.config.ConfigCmdAdapter - Found config local: /data/dev/jess/simple_nextflow_pipeline/nextflow.config
+Nov-25 16:33:18.311 [main] DEBUG nextflow.config.ConfigCmdAdapter - Parsing config file: /data/dev/jess/simple_nextflow_pipeline/nextflow.config
+Nov-25 16:33:18.312 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Nov-25 16:33:18.319 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-25 16:33:18.609 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-25 16:33:18.610 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Nov-25 16:33:18.623 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/jessk/.nextflow/secrets/store.json
+Nov-25 16:33:18.626 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [LocalSecretsProvider] - activable => LocalSecretsProvider
+Nov-25 16:33:18.636 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [adoring_sanger] - revision: 12caf28113
+Nov-25 16:33:18.721 [main] DEBUG nextflow.Session - Session UUID: 66e11da1-2dec-49d3-9e15-a25419400466
+Nov-25 16:33:18.721 [main] DEBUG nextflow.Session - Run name: adoring_sanger
+Nov-25 16:33:18.722 [main] DEBUG nextflow.Session - Executor pool size: 96
+Nov-25 16:33:18.729 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Nov-25 16:33:18.734 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=288; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-25 16:33:18.751 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.10.7 build 15252
+  Created: 20-11-2026 17:50 UTC 
+  System: Linux 6.8.0-90-generic
+  Runtime: Groovy 4.0.33 on OpenJDK 64-Bit Server VM 21.0.6+9-b895.97
+  Encoding: UTF-8 (UTF-8)
+  Process: 3878840@nbsvr961 [127.0.1.1]
+  CPUs: 96 - Mem: 503.4 GB (267.5 GB) - Swap: 8 GB (7.8 GB)
+Nov-25 16:33:18.768 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-25 16:33:18.775 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 97; maxThreads: 1000
+Nov-25 16:33:18.846 [main] DEBUG nextflow.Session - Work-dir: /data/dev/jess/simple_nextflow_pipeline/work [ext2/ext3]
+Nov-25 16:33:18.846 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /data/dev/jess/simple_nextflow_pipeline/bin
+Nov-25 16:33:18.861 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[K8sExecutor]
+Nov-25 16:33:18.871 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Nov-25 16:33:18.872 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Nov-25 16:33:18.904 [main] DEBUG nextflow.Session - Session start
+Nov-25 16:33:18.909 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Nov-25 16:33:19.329 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-25 16:33:19.575 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:33:19.575 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:33:19.582 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Nov-25 16:33:19.592 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=96; memory=503.4 GB; capacity=96; pollInterval=100ms; dumpInterval=5m
+Nov-25 16:33:19.600 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Nov-25 16:33:19.636 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWAMEM': maxForks=0; fair=false; array=0
+Nov-25 16:33:19.666 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:33:19.666 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:33:19.667 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_SORT': maxForks=0; fair=false; array=0
+Nov-25 16:33:19.671 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:33:19.671 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:33:19.671 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_INDEX': maxForks=0; fair=false; array=0
+Nov-25 16:33:19.675 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:33:19.675 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:33:19.676 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'GATK_HAPLOTYPECALLER': maxForks=0; fair=false; array=0
+Nov-25 16:33:19.681 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-25 16:33:19.681 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-25 16:33:19.681 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VEP': maxForks=0; fair=false; array=0
+Nov-25 16:33:19.685 [main] DEBUG nextflow.Session - Process names: SAMTOOLS_SORT, VEP, BWAMEM, GATK_HAPLOTYPECALLER, SAMTOOLS_INDEX
+Nov-25 16:33:19.687 [main] DEBUG nextflow.Session - Igniting dataflow network (7)
+Nov-25 16:33:19.710 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWAMEM
+Nov-25 16:33:19.710 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: data/; pattern: *_R{1,2}_001.fastq.gz; options: [:]
+Nov-25 16:33:19.710 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_SORT
+Nov-25 16:33:19.711 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_INDEX
+Nov-25 16:33:19.711 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GATK_HAPLOTYPECALLER
+Nov-25 16:33:19.712 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VEP
+Nov-25 16:33:19.712 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  _nf_script_c6d07154f4c042cb: /data/dev/jess/simple_nextflow_pipeline/modules/local/bwamem/main.nf
+  _nf_script_3f3e8b48b39d35e7: /data/dev/jess/simple_nextflow_pipeline/modules/local/vep/main.nf
+  Main: /data/dev/jess/simple_nextflow_pipeline/main.nf
+  _nf_script_dd49926eff707056: /data/dev/jess/simple_nextflow_pipeline/modules/local/gatk_haplotypecaller/main.nf
+  _nf_script_14a5cf0fd6b59003: /data/dev/jess/simple_nextflow_pipeline/modules/local/samtools/sort/main.nf
+  _nf_script_59de6b3db482d82d: /data/dev/jess/simple_nextflow_pipeline/modules/local/samtools/index/main.nf
+Nov-25 16:33:19.712 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Nov-25 16:33:19.712 [main] DEBUG nextflow.Session - Session await
+Nov-25 16:33:19.916 [Actor Thread 30] INFO  nextflow.processor.TaskProcessor - [10/b903e1] Cached process > BWAMEM (1)
+Nov-25 16:33:19.916 [Actor Thread 28] INFO  nextflow.processor.TaskProcessor - [8c/b7f65f] Cached process > BWAMEM (3)
+Nov-25 16:33:19.916 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [14/8b5e5d] Cached process > BWAMEM (2)
+Nov-25 16:33:19.938 [Actor Thread 38] INFO  nextflow.processor.TaskProcessor - [d8/71ec23] Cached process > SAMTOOLS_SORT (2)
+Nov-25 16:33:19.938 [Actor Thread 39] INFO  nextflow.processor.TaskProcessor - [d0/293140] Cached process > SAMTOOLS_SORT (3)
+Nov-25 16:33:19.939 [Actor Thread 36] INFO  nextflow.processor.TaskProcessor - [11/7a60e4] Cached process > SAMTOOLS_SORT (1)
+Nov-25 16:33:19.947 [Actor Thread 47] INFO  nextflow.processor.TaskProcessor - [0a/fbaec5] Cached process > SAMTOOLS_INDEX (2)
+Nov-25 16:33:19.947 [Actor Thread 49] INFO  nextflow.processor.TaskProcessor - [ce/e67fd3] Cached process > SAMTOOLS_INDEX (3)
+Nov-25 16:33:19.949 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [86/1540dd] Cached process > SAMTOOLS_INDEX (1)
+Nov-25 16:33:20.080 [Actor Thread 62] INFO  nextflow.processor.TaskProcessor - [4a/026115] Cached process > GATK_HAPLOTYPECALLER (1)
+Nov-25 16:33:20.125 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-25 16:33:20.127 [Task submitter] INFO  nextflow.Session - [49/27294a] Submitted process > GATK_HAPLOTYPECALLER (2)
+Nov-25 16:33:20.135 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-25 16:33:20.136 [Task submitter] INFO  nextflow.Session - [3e/f1805e] Submitted process > GATK_HAPLOTYPECALLER (3)
+Nov-25 16:33:20.141 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-25 16:33:20.141 [Task submitter] INFO  nextflow.Session - [9f/a595f9] Submitted process > VEP (1)
+Nov-25 16:33:21.064 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: VEP (1); status: COMPLETED; exit: 2; error: -; workDir: /data/dev/jess/simple_nextflow_pipeline/work/9f/a595f9c8078786e942f5fc87882baf]
+Nov-25 16:33:21.068 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=288; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Nov-25 16:33:21.081 [TaskFinalizer-1] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=VEP (1); work-dir=/data/dev/jess/simple_nextflow_pipeline/work/9f/a595f9c8078786e942f5fc87882baf
+  error [nextflow.exception.ProcessFailedException]: Process `VEP (1)` terminated with an error exit status (2)
+Nov-25 16:33:21.095 [TaskFinalizer-1] ERROR nextflow.processor.TaskProcessor - Error executing process > 'VEP (1)'
+
+Caused by:
+  Process `VEP (1)` terminated with an error exit status (2)
+
+
+Command executed:
+
+  vep \
+      --input_file TESTX_H7YRLADXX.vcf.gz \
+      --output_file TESTX_H7YRLADXX.annotated.txt \
+      --cache \
+      --offline \
+      --assembly GRCh38 \
+      --dir_cache vep \
+      --dir_plugins Plugins \
+      --force_overwrite
+
+Command exit status:
+  2
+
+Command output:
+  (empty)
+
+Command error:
+  
+  -------------------- EXCEPTION --------------------
+  MSG: ERROR: Cache directory vep/homo_sapiens not found
+  
+  STACK Bio::EnsEMBL::VEP::CacheDir::dir /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/CacheDir.pm:307
+  STACK Bio::EnsEMBL::VEP::CacheDir::init /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/CacheDir.pm:221
+  STACK Bio::EnsEMBL::VEP::CacheDir::new /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/CacheDir.pm:113
+  STACK Bio::EnsEMBL::VEP::AnnotationSourceAdaptor::get_all_from_cache /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/AnnotationSourceAdaptor.pm:116
+  STACK Bio::EnsEMBL::VEP::AnnotationSourceAdaptor::get_all /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/AnnotationSourceAdaptor.pm:92
+  STACK Bio::EnsEMBL::VEP::BaseRunner::get_all_AnnotationSources /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/BaseRunner.pm:175
+  STACK Bio::EnsEMBL::VEP::Runner::init /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/Runner.pm:128
+  STACK Bio::EnsEMBL::VEP::Runner::run /opt/vep/src/ensembl-vep/modules/Bio/EnsEMBL/VEP/Runner.pm:200
+  STACK toplevel /opt/vep/src/ensembl-vep/vep:46
+  Date (localtime)    = Wed Nov 25 16:33:20 2026
+  Ensembl API version = 115
+  ---------------------------------------------------
+
+Work dir:
+  /data/dev/jess/simple_nextflow_pipeline/work/9f/a595f9c8078786e942f5fc87882baf
+
+Container:
+  ensemblorg/ensembl-vep
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+Nov-25 16:33:21.100 [TaskFinalizer-1] DEBUG nextflow.Session - Session aborted -- Cause: Process `VEP (1)` terminated with an error exit status (2)
+Nov-25 16:33:21.130 [TaskFinalizer-1] DEBUG nextflow.Session - The following nodes are still active:
+[process] VEP
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: vep_cache_dir
+  port 2: (value) bound ; channel: vep_plugins_dir
+  port 3: (cntrl) -     ; channel: $
+
+Nov-25 16:33:21.135 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Nov-25 16:33:21.136 [TaskFinalizer-1] WARN  n.processor.TaskPollingMonitor - Killing running tasks (2)
+Nov-25 16:33:21.150 [TaskFinalizer-1] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=10; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=2; succeedDuration=0ms; failedDuration=16.9s; cachedDuration=1h 48m;loadCpus=0; loadMemory=0; peakRunning=3; peakCpus=60; peakMemory=96 GB; ]
+Nov-25 16:33:21.329 [main] DEBUG nextflow.Session - Session await > all processes finished
+Nov-25 16:33:21.330 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-25 16:33:21.346 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-25 16:33:21.355 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,40 @@
+Looking to launch executable "/opt/conda/bin/bwa-mem2.avx512bw", simd = .avx512bw
+Launching executable "/opt/conda/bin/bwa-mem2.avx512bw"
+-----------------------------
+Executing in AVX512 mode!!
+-----------------------------
+* SA compression enabled with xfactor: 8
+* Ref file: GRCh38_masked_v2_decoy_excludes_GPRIN2_DUSP22_FANCD2.fa
+* Entering FMI_search
+* Index file found. Loading index from GRCh38_masked_v2_decoy_excludes_GPRIN2_DUSP22_FANCD2.fa.bwt.2bit.64
+* Reference seq len for bi-index = 6201770307
+* sentinel-index: 2638083850
+* Count:
+0,	1
+1,	1818459487
+2,	3100885154
+3,	4383310821
+4,	6201770307
+
+* Reading other elements of the index from files GRCh38_masked_v2_decoy_excludes_GPRIN2_DUSP22_FANCD2.fa
+* Index prefix: GRCh38_masked_v2_decoy_excludes_GPRIN2_DUSP22_FANCD2.fa
+* Read 0 ALT contigs
+* Done reading Index!!
+* Reading reference genome..
+* Binary seq file = GRCh38_masked_v2_decoy_excludes_GPRIN2_DUSP22_FANCD2.fa.0123
+* Reference genome size: 6201770306 bp
+* Done reading reference genome !!
+
+------------------------------------------
+1. Memory pre-allocation for Chaining: 2786.7754 MB
+2. Memory pre-allocation for BSW: 4792.3405 MB
+3. Memory pre-allocation for BWT: 1546.2835 MB
+------------------------------------------
+* Threads used (compute): 20
+* No. of pipeline threads: 2
+
+[0000] read_chunk: 200000000, work_chunk_size: 329466, nseq: 12
+	[0000][ M::kt_pipeline] read 12 sequences (329466 bp)...
+[0000] Calling mem_process_seqs.., task: 0
+[0000] 1. Calling kt_for - worker_bwt
+[0000] read_chunk: 200000000, work_chunk_size: 0, nseq: 0

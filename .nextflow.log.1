@@ -1,0 +1,52 @@
+Nov-25 17:03:16.475 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --samplesheet samplesheet.csv -resume
+Nov-25 17:03:16.570 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.10.7
+Nov-25 17:03:16.587 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jessk/.nextflow/plugins; core-plugins: nf-agent-pi@0.6.0,nf-agent@0.2.0,nf-amazon@3.12.1,nf-azure@1.24.5,nf-cloudcache@0.6.2,nf-codecommit@0.6.1,nf-console@1.3.1,nf-google@1.29.1,nf-k8s@1.6.2,nf-seqera@0.26.3,nf-tower@1.32.2,nf-wave@1.22.7
+Nov-25 17:03:16.613 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-25 17:03:16.613 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-25 17:03:16.616 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Nov-25 17:03:16.631 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Nov-25 17:03:16.774 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Nov-25 17:03:16.782 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-25 17:03:16.801 [main] DEBUG nextflow.config.ConfigCmdAdapter - Found config local: /data/dev/jess/simple_nextflow_pipeline/nextflow.config
+Nov-25 17:03:16.803 [main] DEBUG nextflow.config.ConfigCmdAdapter - Parsing config file: /data/dev/jess/simple_nextflow_pipeline/nextflow.config
+Nov-25 17:03:16.805 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Nov-25 17:03:16.812 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Nov-25 17:03:16.914 [main] ERROR nextflow.cli.Launcher - Config parsing failed
+nextflow.exception.ConfigParseException: Config parsing failed
+	at nextflow.config.parser.v2.ConfigParserV2.parse(ConfigParserV2.groovy:162)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.config.parser.v2.ConfigParserV2.parse(ConfigParserV2.groovy:192)
+	at nextflow.config.ConfigBuilder.parse0(ConfigBuilder.groovy:277)
+	at nextflow.config.ConfigBuilder.merge0(ConfigBuilder.groovy:258)
+	at nextflow.config.ConfigBuilder.build(ConfigBuilder.groovy:211)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.config.ConfigCmdAdapter.buildGivenFiles(ConfigCmdAdapter.groovy:299)
+	at nextflow.config.ConfigCmdAdapter.buildConfigObject(ConfigCmdAdapter.groovy:141)
+	at nextflow.config.ConfigCmdAdapter.build(ConfigCmdAdapter.groovy:131)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:374)
+	at nextflow.cli.Launcher.run(Launcher.groovy:535)
+	at nextflow.cli.Launcher.main(Launcher.groovy:641)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+_nf_config_a54628cfebb617bb: 5: Unexpected character: '$' @ line 5, column 22.
+       runOptions = "-u $(id -u):$(id -g)"
+                        ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:292)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:148)
+	at nextflow.config.parser.ConfigAstBuilder.collectSyntaxError(ConfigAstBuilder.java:1377)
+	at nextflow.config.parser.ConfigAstBuilder.createParsingFailedException(ConfigAstBuilder.java:1360)
+	at nextflow.config.parser.ConfigAstBuilder.convertException(ConfigAstBuilder.java:180)
+	at nextflow.config.parser.ConfigAstBuilder.buildCST(ConfigAstBuilder.java:160)
+	at nextflow.config.parser.ConfigAstBuilder.buildAST(ConfigAstBuilder.java:185)
+	at nextflow.config.parser.ConfigParserPlugin.buildAST(ConfigParserPlugin.java:51)
+	at org.codehaus.groovy.control.SourceUnit.buildAST(SourceUnit.java:256)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:631)
+	at nextflow.config.parser.v2.ConfigCompiler.compile0(ConfigCompiler.java:112)
+	at nextflow.config.parser.v2.ConfigCompiler.compile(ConfigCompiler.java:97)
+	at nextflow.config.parser.v2.ConfigParserV2.parse(ConfigParserV2.groovy:141)
+	... 12 common frames omitted
