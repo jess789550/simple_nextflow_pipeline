@@ -1,4 +1,0 @@
-Unable to find image 'community.wave.seqera.io/library/gatk:4.2.6.1' locally
-docker: Error response from daemon: failed to resolve reference "community.wave.seqera.io/library/gatk:4.2.6.1": community.wave.seqera.io/library/gatk:4.2.6.1: not found
-
-Run 'docker run --help' for more information
