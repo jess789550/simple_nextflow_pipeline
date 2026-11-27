@@ -1,0 +1,43 @@
+nextflow_process {
+
+    name "Test Process VEP"
+    script "modules/local/vep/main.nf"
+    process "VEP"
+
+    test("Should run without failures") {
+
+        when {
+            process {
+                """
+                input[0] = [
+                    [id: "test", name: "test", project: "test"],
+                    [
+                        file("\${params.test_dir}/vcf/NA12878_GIAB.chr22.vcf.gz")
+                    ]
+                ]
+                input[1] = file("\${params.vep_cache_dir}")
+                input[2] = file("\${params.vep_plugins_dir}")
+                input[3] = [
+                    [id: "test", name: "test", project: "test"],
+                    [
+                        file("\${params.test_dir}/bam/NA12878_GIAB.chr22.bam.bai")
+                    ]
+                ]
+                """
+            }
+        }
+
+        then {
+            assert process.success
+
+            def (meta, annotated_vcf) = process.out.annotated_vcf.get(0)
+
+            def outputFile = new File(annotated_vcf.toString())
+
+            assert outputFile.exists()
+            assert outputFile.length() > 0
+        }
+
+    }
+
+}

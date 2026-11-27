@@ -4,7 +4,7 @@ Simple NextFlow Pipeline
 AI was used to help build this pipeline: https://cloud.seqera.io/
 
 ## How to run
-Get test data from https://github.com/hartwigmedical/testdata and put it in a sub-folder called "data" after cloning this repo.
+Get data from https://github.com/hartwigmedical/testdata and put it in a sub-folder called "data" after cloning this repo.
 
 ```
 export UID_HOST=$(id -u)
@@ -13,7 +13,13 @@ nextflow run main.nf --samplesheet samplesheet.csv
 ```
 
 ## Run Tests
+Get test data from /data/dev/jess/test-datasets/data/genomics/homo_sapiens/genome/ (modules branch)
 ```
+# Index FASTA /data/dev/jess/test-datasets/data/genomics/homo_sapiens/genome/genome.fasta
+docker run --rm \
+  -v "$PWD:/data" -w /data \
+  dceoy/bwa-mem2 index genome.fasta
+
 # https://www.nf-test.com/docs/getting-started/
 nf-test test
 ```

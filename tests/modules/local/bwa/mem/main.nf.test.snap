@@ -1,0 +1,33 @@
+{
+    "Should run without failures": {
+        "content": [
+            {
+                "0": [
+                    [
+                        {
+                            "id": "test",
+                            "name": "test",
+                            "project": "test"
+                        },
+                        "test.bam:md5,2ed97751b14ca0e4a68d0c91ecd8dee3"
+                    ]
+                ],
+                "bam": [
+                    [
+                        {
+                            "id": "test",
+                            "name": "test",
+                            "project": "test"
+                        },
+                        "test.bam:md5,2ed97751b14ca0e4a68d0c91ecd8dee3"
+                    ]
+                ]
+            }
+        ],
+        "timestamp": "2026-11-27T15:41:20.800838464",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.10.7"
+        }
+    }
+}

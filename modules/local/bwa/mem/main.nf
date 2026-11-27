@@ -1,4 +1,4 @@
-process BWAMEM {
+process BWA_MEM {
     tag "${meta.id}"
     container 'community.wave.seqera.io/library/bwa-mem2_samtools:ce303392aed31f97'
     cpus 2
@@ -6,8 +6,12 @@ process BWAMEM {
 
     input:
     tuple val(meta), path(reads)
-    path fasta
-    path index_files
+    tuple path(fasta),
+          path("${fasta}.amb"),
+          path("${fasta}.ann"),
+          path("${fasta}.pac"),
+          path("${fasta}.bwt.2bit.64"),
+          path("${fasta}.0123")
 
     output:
     tuple val(meta), path("${meta.name}.bam"), emit: bam

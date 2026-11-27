@@ -1,0 +1,42 @@
+nextflow_process {
+
+    name "Test Process GATK_HAPLOTYPECALLER"
+    script "modules/local/gatk_haplotypecaller/main.nf"
+    process "GATK_HAPLOTYPECALLER"
+
+    test("Should run without failures") {
+
+        when {
+            process {
+                """
+                input[0] = [
+                    [id: "test", name: "test", project: "test"],
+                    [
+                        file("\${params.test_dir}/bam/test.paired_end.sorted.bam")
+                    ]
+                ]
+                input[1] = [
+                    [id: "test", name: "test", project: "test"],
+                    [
+                        file("\${params.test_dir}/bam/test.paired_end.sorted.bam.bai")
+                    ]
+                ]
+                input[2] = file("\${params.reference_genome}")
+                """
+            }
+        }
+
+        then {
+            assert process.success
+
+            def (meta, vcf) = process.out.vcf.get(0)
+
+            def outputFile = new File(vcf.toString())
+
+            assert outputFile.exists()
+            assert outputFile.length() > 0
+        }
+
+    }
+
+}

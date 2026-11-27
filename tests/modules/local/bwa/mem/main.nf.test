@@ -1,8 +1,8 @@
 nextflow_process {
 
-    name "Test Process BWAMEM"
-    script "modules/local/bwamem/main.nf"
-    process "BWAMEM"
+    name "Test Process BWA_MEM"
+    script "modules/local/bwa/mem/main.nf"
+    process "BWA_MEM"
 
     test("Should run without failures") {
 
@@ -12,17 +12,16 @@ nextflow_process {
                 input[0] = [
                     [id: "test", name: "test", project: "test"],
                     [
-                        file("\${params.fastq_dir}/TESTX_H7YRLADXX_S1_L001_R1_001.fastq.gz"),
-                        file("\${params.fastq_dir}/TESTX_H7YRLADXX_S1_L001_R2_001.fastq.gz")
+                        file("\${params.test_dir}/fastq/test_1.fastq.gz"),
+                        file("\${params.test_dir}/fastq/test_2.fastq.gz")
                     ]
                 ]
-                input[1] = file("\${params.reference_genome}")
-                input[2] = [
-                    file("\${params.reference_genome}.fai"),
-                    file("\${params.reference_genome}.bwt.2bit.64"),
+                input[1] =   [
+                    file("\${params.reference_genome}"),
                     file("\${params.reference_genome}.amb"),
                     file("\${params.reference_genome}.ann"),
                     file("\${params.reference_genome}.pac"),
+                    file("\${params.reference_genome}.bwt.2bit.64"),
                     file("\${params.reference_genome}.0123")
                 ]
                 """
