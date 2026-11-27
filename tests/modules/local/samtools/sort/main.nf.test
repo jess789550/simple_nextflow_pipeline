@@ -1,0 +1,29 @@
+nextflow_process {
+
+    name "Test Process SAMTOOLS_SORT"
+    script "modules/local/samtools/sort/main.nf"
+    process "SAMTOOLS_SORT"
+
+    test("Should run without failures") {
+
+        when {
+            process {
+                """
+                input[0] = [
+                    [id: "test", name: "test", project: "test"],
+                    [
+                        file("\${params.test_dir}/bam/example_hla_pe.bam")
+                    ]
+                ]
+                """
+            }
+        }
+
+        then {
+            assert process.success
+            assert snapshot(process.out).match()
+        }
+
+    }
+
+}

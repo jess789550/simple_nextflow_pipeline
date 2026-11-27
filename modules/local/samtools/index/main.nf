@@ -12,6 +12,6 @@ process SAMTOOLS_INDEX {
 
     script:
     """
-    samtools index ${meta.name}.sorted.bam
+    samtools index ${bam}
     """
 }

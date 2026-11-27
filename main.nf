@@ -1,7 +1,8 @@
 nextflow.enable.dsl = 2
 
 // Load modules
-include { BWAMEM } from './modules/local/bwamem/main.nf'
+include { BWA_INDEX } from './modules/local/bwa/index/main.nf'
+include { BWA_MEM } from './modules/local/bwa/mem/main.nf'
 include { SAMTOOLS_SORT } from './modules/local/samtools/sort/main.nf'
 include { SAMTOOLS_INDEX } from './modules/local/samtools/index/main.nf'
 include { GATK_HAPLOTYPECALLER } from './modules/local/gatk_haplotypecaller/main.nf'
@@ -18,7 +19,7 @@ workflow {
         }
     
     // Parse the FASTQ files and create a channel of reads
-    ch_reads = channel.fromFilePairs("${params.fastq_dir}/*_R{1,2}_001.fastq.gz")
+    ch_reads = channel.fromFilePairs("${params.fastq_dir}/*_{1,2}*.fastq.gz")
         .map { name, reads -> [ name.replaceFirst(/_S\d+_L\d{3}$/, ''), reads ] }
     
     // Join the metadata and reads channels to create a channel of input tuples  
@@ -29,15 +30,17 @@ workflow {
     // Print the input channel for debugging
     ch_input.view { v -> "INPUT: ${v}" }
     
-    // Define the reference genome and index files
-    def fasta       = file(params.reference_genome, checkIfExists: true)
-    def index_files = files("${params.reference_genome}.{amb,ann,pac,0123,bwt.2bit.64,fai}")
+    // Define the reference genome
+    def fasta = file(params.reference_genome, checkIfExists: true)
+
+    // Index the reference genome using BWA_INDEX
+    BWA_INDEX(fasta)
     
     // Align reads using BWA-MEM
-    BWAMEM(ch_input, fasta, index_files)
+    BWA_MEM(ch_input, BWA_INDEX.out)
     
     // Sort the BAM files using SAMTOOLS_SORT
-    SAMTOOLS_SORT(BWAMEM.out.bam)
+    SAMTOOLS_SORT(BWA_MEM.out.bam)
     
     // Index the sorted BAM files using SAMTOOLS_INDEX
     SAMTOOLS_INDEX(SAMTOOLS_SORT.out.sorted_bam)
